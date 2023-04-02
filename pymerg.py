@@ -47,11 +47,7 @@ def merge_pdf(FPath, PDFName):
         if(".pdf" not in pdf):
             continue
 
-        # print(pdf[0])
-        # if(pdf[0] != '.'):
         merger.append(pdf)
-        # else:
-            # continue
 
     merger.write(PDFName)
     merger.close()
@@ -94,9 +90,8 @@ while True:
             if(".pdf" not in PDFName):
                 PDFName = PDFName + ".pdf"
         except:
-            PDFName = ""
+            PGUI.popup_error("Please enter a unique name for PDF")
+            continue
 
         if(PDFName != ""):
             merge_pdf(FPath, PDFName)
-        else:
-            merge_pdf(FPath, "mergedpdfs.pdf")
